@@ -55,14 +55,10 @@ def sort_by_cohort(filename):
         data = line.rstrip()
         new_data = data.split("|")
 
-        # print new_data
         name = new_data[0] + " " + new_data[1]
         # print name
 
-
-
-        
-        # created list for each cohort
+        # created list for each cohort, including TAs
         cohort = new_data[4]
         if cohort == "Winter 2015":
             winter_15.append(name)
@@ -70,15 +66,17 @@ def sort_by_cohort(filename):
             spring_15.append(name)
         elif cohort == "Summer 2015":
             summer_15.append(name)
-    
-    # print "Winter \n", winter_15
-    # print "Spring \n", spring_15
-    # print "Summer \n", summer_15    
+        elif cohort == "TA":
+            tas.append(name)
 
-    # 1. create list for each cohort
-    # 2. order students alphabetically
-    # 3. create list for tas
-    # 4. order tas alphabetically   
+    print "Winter \n", winter_15
+    print "\n"
+    print "Spring \n", spring_15
+    print "\n"
+    print "Summer \n", summer_15
+    print "\n"
+    print "TAs \n", tas
+
 
 
     # return all_students
