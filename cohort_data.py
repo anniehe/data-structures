@@ -77,7 +77,7 @@ def sort_by_cohort(filename):
     return all_students
 
     cohort_data.close()
-    
+
 
 def students_by_house(filename):
     """TODO: Sort students by house.
@@ -110,6 +110,14 @@ def students_by_house(filename):
     instructors = []
 
     # Code goes here
+
+    # create list for each house
+
+    # sort students into houses by last name
+
+    # sort TAs into tas list
+
+    # sort instructors into instructors list
 
     return all_students
 
@@ -185,8 +193,8 @@ def find_house_members_by_student_name(student_list):
 # Here is some useful code to run these functions!
 
 # print unique_houses("cohort_data.txt")
-print sort_by_cohort("cohort_data.txt")
-# print students_by_house("cohort_data.txt")
+# print sort_by_cohort("cohort_data.txt")
+print students_by_house("cohort_data.txt")
 # all_students_data = all_students_tuple_list("cohort_data.txt")
 # print all_students_data
 # find_cohort_by_student_name(all_students_data)
