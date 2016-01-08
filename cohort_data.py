@@ -76,6 +76,8 @@ def sort_by_cohort(filename):
 
     return all_students
 
+    cohort_data.close()
+    
 
 def students_by_house(filename):
     """TODO: Sort students by house.
