@@ -69,15 +69,15 @@ def sort_by_cohort(filename):
         elif cohort == "TA":
             tas.append(name)
 
-        # added cohort and TAs list to all_students list
-    all_students.extend([winter_15, spring_15, summer_15, tas])
-    print all_students
+    # ordered cohorts and TAs alphabetically    
+    winter_15.sort()
+    spring_15.sort()
+    summer_15.sort()
+    tas.sort()
 
-    # # ordered cohorts and TAs alphabetically    
-    # winter_15.sort()
-    # spring_15.sort()
-    # summer_15.sort()
-    # tas.sort()
+    # added cohort and TAs list to all_students list
+    all_students.extend([winter_15, spring_15, summer_15, tas])
+    # print all_students
 
     # print "Winter \n", winter_15
     # print "\n"
@@ -87,9 +87,7 @@ def sort_by_cohort(filename):
     # print "\n"
     # print "TAs \n", tas
 
-
-
-    # return all_students
+    return all_students
 
 
 def students_by_house(filename):
