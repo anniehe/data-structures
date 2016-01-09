@@ -116,9 +116,8 @@ def students_by_house(filename):
         record = line.rstrip()
         data = record.split("|")
 
-        last_name = data[1]        
-
-        # create list for each house
+        last_name = data[1]
+                
         house = data[2]
         if house == "Gryffindor":
             gryffindor.append(last_name)
@@ -133,32 +132,19 @@ def students_by_house(filename):
         elif house == "Ravenclaw":
             ravenclaw.append(last_name)
 
-        # create tas and instructor lists
         if data[4] == "TA":
             tas.append(last_name)
         elif data[4] == "I":
             instructors.append(last_name)
 
-    # sort students into houses by last name
     gryffindor.sort()
     hufflepuff.sort()
     slytherin.sort()
     dumbledores_army.sort()
     order_of_the_phoenix.sort()
     ravenclaw.sort()
-
-    # sort tas and instructors by last name
     tas.sort()
     instructors.sort()
-
-    # print "Gryffindor \n", gryffindor, "\n"
-    # print "Hufflepuff \n", hufflepuff, "\n"
-    # print "Slytherin \n", slytherin, "\n"
-    # print "Dumbledore's Army \n", dumbledores_army, "\n"
-    # print "Order of the Phoenix \n", order_of_the_phoenix, "\n"
-    # print "Ravenclaw \n", ravenclaw, "\n"
-    # print "TAs \n", tas, "\n"
-    # print "Instructors \n", instructors, "\n"
 
     all_students.extend([hufflepuff,
                         gryffindor,
