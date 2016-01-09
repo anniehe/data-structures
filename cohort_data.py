@@ -26,9 +26,9 @@ def unique_houses(filename):
         if house:
             houses.add(house)
 
-    return houses
-
     cohort_data.close()
+
+    return houses
 
 
 def sort_by_cohort(filename):
@@ -52,12 +52,12 @@ def sort_by_cohort(filename):
     cohort_data = open(filename)
 
     for line in cohort_data:
-        data = line.rstrip()
-        new_data = data.split("|")
+        record = line.rstrip()
+        data = record.split("|")
 
-        name = new_data[0] + " " + new_data[1]
+        name = data[0] + " " + data[1]
 
-        cohort = new_data[4]
+        cohort = data[4]
         if cohort == "Winter 2015":
             winter_15.append(name)
         elif cohort == "Spring 2015":
@@ -74,9 +74,9 @@ def sort_by_cohort(filename):
 
     all_students.extend([winter_15, spring_15, summer_15, tas])
 
-    return all_students
-
     cohort_data.close()
+
+    return all_students
 
 
 def students_by_house(filename):
@@ -110,8 +110,18 @@ def students_by_house(filename):
     instructors = []
 
     # Code goes here
+    cohort_data = open(filename)
 
-    # create list for each house
+    for line in cohort_data:
+        record = line.rstrip()
+        data = record.split("|")
+
+        # create list for each house
+        house = data[2]
+        if house == "Gryffindor":
+            gryffindor.append(name)
+
+
 
     # sort students into houses by last name
 
@@ -119,7 +129,7 @@ def students_by_house(filename):
 
     # sort instructors into instructors list
 
-    return all_students
+    # return all_students
 
 
 def all_students_tuple_list(filename):
@@ -193,8 +203,8 @@ def find_house_members_by_student_name(student_list):
 # Here is some useful code to run these functions!
 
 # print unique_houses("cohort_data.txt")
-# print sort_by_cohort("cohort_data.txt")
-print students_by_house("cohort_data.txt")
+print sort_by_cohort("cohort_data.txt")
+# print students_by_house("cohort_data.txt")
 # all_students_data = all_students_tuple_list("cohort_data.txt")
 # print all_students_data
 # find_cohort_by_student_name(all_students_data)
