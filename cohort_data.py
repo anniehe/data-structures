@@ -117,7 +117,7 @@ def students_by_house(filename):
         data = record.split("|")
 
         last_name = data[1]
-                
+
         house = data[2]
         if house == "Gryffindor":
             gryffindor.append(last_name)
@@ -155,6 +155,8 @@ def students_by_house(filename):
                         tas,
                         instructors]
     )
+
+    cohort_data.close()
 
     return all_students
 
