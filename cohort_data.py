@@ -186,9 +186,9 @@ def all_students_tuple_list(filename):
         full_name = first_name + " " + last_name
         if house:
             student_data = (full_name, house, advisor, cohort)
-            # print student_data
-
-    # return student_list
+            student_list.append(student_data)
+   
+    return student_list
 
 
 def find_cohort_by_student_name(student_list):
@@ -246,7 +246,7 @@ def find_house_members_by_student_name(student_list):
 # print sort_by_cohort("cohort_data.txt")
 # print students_by_house("cohort_data.txt")
 all_students_data = all_students_tuple_list("cohort_data.txt")
-# print all_students_data
+print all_students_data
 # find_cohort_by_student_name(all_students_data)
 # print find_name_duplicates("cohort_data.txt")
 # find_house_members_by_student_name(all_students_data)
