@@ -133,6 +133,11 @@ def students_by_house(filename):
         elif house == "Ravenclaw":
             ravenclaw.append(last_name)
 
+        # create tas and instructor lists
+        if data[4] == "TA":
+            tas.append(last_name)
+        elif data[4] == "I":
+            instructors.append(last_name)
 
     # sort students into houses by last name
     gryffindor.sort()
@@ -148,10 +153,9 @@ def students_by_house(filename):
     # print "Dumbledore's Army \n", dumbledores_army, "\n"
     # print "Order of the Phoenix \n", order_of_the_phoenix, "\n"
     # print "Ravenclaw \n", ravenclaw, "\n"
+    print "TAs \n", tas, "\n"
+    print "Instructors \n", instructors, "\n"
 
-
-
-    # sort TAs into tas list
 
     # sort instructors into instructors list
 
