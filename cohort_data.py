@@ -147,19 +147,30 @@ def students_by_house(filename):
     order_of_the_phoenix.sort()
     ravenclaw.sort()
 
+    # sort tas and instructors by last name
+    tas.sort()
+    instructors.sort()
+
     # print "Gryffindor \n", gryffindor, "\n"
     # print "Hufflepuff \n", hufflepuff, "\n"
     # print "Slytherin \n", slytherin, "\n"
     # print "Dumbledore's Army \n", dumbledores_army, "\n"
     # print "Order of the Phoenix \n", order_of_the_phoenix, "\n"
     # print "Ravenclaw \n", ravenclaw, "\n"
-    print "TAs \n", tas, "\n"
-    print "Instructors \n", instructors, "\n"
+    # print "TAs \n", tas, "\n"
+    # print "Instructors \n", instructors, "\n"
 
+    all_students.extend([hufflepuff,
+                        gryffindor,
+                        ravenclaw,
+                        slytherin,
+                        dumbledores_army,
+                        order_of_the_phoenix,
+                        tas,
+                        instructors]
+    )
 
-    # sort instructors into instructors list
-
-    # return all_students
+    return all_students
 
 
 def all_students_tuple_list(filename):
