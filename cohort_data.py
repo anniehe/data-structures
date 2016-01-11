@@ -191,11 +191,10 @@ def all_students_tuple_list(filename):
         data = record.split("|")
 
         first_name, last_name, house, advisor, cohort = data
-        full_name = first_name + " " + last_name
 
         if house:
-            student_data = (full_name, house, advisor, cohort)
-            student_list.append(student_data)
+            student_tuple = (first_name + " " + last_name, house, advisor, cohort)
+            student_list.append(student_tuple)
 
     cohort_data.close()
 
@@ -212,10 +211,10 @@ def find_cohort_by_student_name(student_list):
     input_name = raw_input("Who are you looking for? ")
 
     for student_tuple in student_list:
-        full_name, house, advisor, cohort = student_tuple
+        student_name, house, advisor, cohort = student_tuple
 
-        if input_name == full_name:
-            print "%s was found in the %s cohort" % (full_name, cohort)
+        if input_name == student_name:
+            print "%s was found in the %s cohort" % (student_name, cohort)
             return
 
     print "%s was not found. Perhaps they are staff." % (input_name)
@@ -273,9 +272,25 @@ def find_house_members_by_student_name(student_list):
     when given a student's first and last name, returns students that are in both that
     student's cohort and that student's house."""
 
-    # Code goes here
+    input_name = raw_input("Enter a student's first and last name: ")
 
-    return
+    for student_tuple in student_list:
+        student_name, house, advisor, cohort = student_tuple
+
+        if input_name == student_name:
+
+            print "%s was in the %s house in the %s cohort." % (student_name, house, cohort)
+            print "The following students were also in the same house: "
+
+            for other_tuple in student_list:
+                if (other_tuple[3] == cohort
+                        and other_tuple[1] == house
+                        and other_tuple[0] != input_name):
+                    print other_tuple[0]
+
+            return
+
+    print "%s was not found." % (input_name)
 
 
 #########################################################################################
@@ -288,5 +303,5 @@ def find_house_members_by_student_name(student_list):
 # all_students_data = all_students_tuple_list("cohort_data.txt")
 # print all_students_data
 # find_cohort_by_student_name(all_students_data)
-print find_name_duplicates("cohort_data.txt")
+# print find_name_duplicates("cohort_data.txt")
 # find_house_members_by_student_name(all_students_data)
